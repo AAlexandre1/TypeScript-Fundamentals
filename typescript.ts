@@ -24,6 +24,9 @@ beRandom = [54, "I like cheese,", false];
 // The string and number in the array will cause an error
 // an array of strings and numbers was not specified
 
+beRandom = true;
+// since an array of booleans was specified, a single boolean can not be assigned to this variable
+
 // primitive types
 
 let age: number;
@@ -151,4 +154,14 @@ applicants = [
    }
 ];
 
+
+// Functions and types
+
+function add(a: number, b: number) {
+   return a + b;
+}
+
+function address(houseNumber: number, street: string) {
+   return houseNumber + street;
+}
 

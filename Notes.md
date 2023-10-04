@@ -1,7 +1,8 @@
+# TypeScript
 TypeScript's strength is being able to specify what type a value should be. By specifying a type errors can be avoided. 
 TYpeScript extends JavaScript. When TypeScript is compiled it will notify you of errors, but it does NOT change the code. 
 
-Type inference /////////////////////////////////////////////////
+# Type inference 
 
 let message = "Welcome to the show!"
 By initializing the variable with a string, TypeScript infers that message should be type string
@@ -10,7 +11,8 @@ message = 234
 trying to reassign a number to message will result in an error since message was infered to be type string
 
 
-Union types ////////////////////////////////////////////////////
+# Union types
+
 Allows you to assign a variable multiple types
 
 adding | between types allows you to specify more than one type
@@ -31,10 +33,12 @@ beRandom = [54, "I like cheese,", false];
 The string and number in the array will cause an error
 an array of strings and numbers was not specified
 
+beRandom = true;
+// since an array of booleans was specified, a single boolean can not be assigned to this variable
 
 
+# Typescript types
 
-Typescript types ///////////////////////////////////////////////
 Primitives
    Numbers
    Strings
@@ -46,7 +50,7 @@ Complex
 Function types and parameters
 
 
-Primitive types ////////////////////////////////////////////////
+# Primitive types
 
 let age: number
 Clarifies that the variable "age should store anumber
@@ -55,9 +59,9 @@ Must use lowercase when defining type. Using uppercase denotes the number object
 age = "ancient";
 This would return an error but the code will still compile and run in JavaScript.
 
-Complex types /////////////////////////////////////////////////
+# Complex types
 
-Arrays --------------------------------------------------------
+# Arrays
 
 let flavors: string[];
 
@@ -80,7 +84,7 @@ this would not return an error because all of the values in the array are boolea
 isTasty = ["true", false, false, true, true, true]
 would return an error because "true is type string not type boolean
 
-Objects -------------------------------------------------------
+# Objects
 
 let course: {
    name: string;
@@ -99,7 +103,7 @@ course = {
 }
 
 
-Array of objects ----------------------------------------------
+# Array of objects
 
 let orders: {
    name: string;
@@ -125,7 +129,7 @@ orders = [
 ]
 an array of objects where the type of each key is defined.
 
-Type alias ////////////////////////////////////////////////////
+# Type alias
 
 eliminates type duplication in which multiple variables will use the same type. Mostly used for complex types rather than primitive types. 
 
@@ -168,3 +172,13 @@ applicants = [
    }
 ];
 
+
+# Functions and types
+
+function add(a: number, b: number) {
+   return a + b;
+}
+
+function address(houseNumber: number, street: string) {
+   return houseNumber + street;
+}
