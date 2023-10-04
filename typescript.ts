@@ -155,13 +155,78 @@ applicants = [
 ];
 
 
-// Functions and types
+//Functions and types
 
 function add(a: number, b: number) {
    return a + b;
 }
 
-function address(houseNumber: number, street: string) {
+function address(houseNumber: number, street: string): string {
    return houseNumber + street;
 }
+// the type the function returns can also be specified after the parameters
 
+function prinntOutPut(value: any) {
+   console.log(value);
+}
+// since this function does not have a return statement it has a special return type of void
+// Void is comparable to null and undefined but it is only for functions
+// It means the the function never returns
+// When working with the return value for this function it will be undefined
+
+
+// Generics
+
+function insertAtBeginning(array: any[], value: any) {
+   const newArray = [value, ...array];
+   return newArray;
+}
+// ...array copies the existing array using the spread operator
+// this function takes an array and adds the value entered to the front of the array
+
+// because type any was specified in the function TypeScript does not infer that the array we are using is an array of numbers
+
+
+const testArray = ['Chocolate', 'Vanilla', 'Strawberry'];
+
+const updatedTestArray = insertAtBeginning(testArray, 'Butter Pecan');
+// value of the updated array will be ['Butter Pecan', 'Chocolate', 'Vanilla', 'Strawberry']
+
+updatedTestArray[0].split('');
+
+
+const demoArray = [1, 2, 3];
+
+const updatedDemoArray = insertAtBeginning(demoArray, -1);
+// the value of the updated array will be [-1, 1, 2, 3];
+
+updatedDemoArray[0].split('');
+// This tries to split the value at index 0 which is -1
+// splt can not be called on a number so this will create a run time error
+// TypeScript allows this because it does not know that the value is a number since we specified type any
+
+
+
+// Generic Function
+
+function insertAtBeginning2<T>(array: T[], value: T) {
+   const newArray = [value, ...array];
+   return newArray;
+}
+// Adding <T> or <Type> after the function name but before the parameters specifies a generic type (any identifier can be used but T and Type are standard practice)
+// This generic type will only be available inside of this function
+// It tells TypeScript to look at the type of the values of the parameters and that they should be the same
+
+// Using a generic type allows for flexibile and type safe functions
+
+// This function will work with any type, but once a type is used it is locked in for THAT execution of the function
+
+
+const demoArray2 = [1, 2, 3];
+
+const updatedDemoArray2 = insertAtBeginning2(demoArray2, -1);
+// The function understands that the type of the array and the type of the value are numbers
+// TypeScript knows that the result of the function has to be an array of numbers 
+
+updatedDemoArray2[0].split('');
+// TypeScript will now warn that split is being called on a number
