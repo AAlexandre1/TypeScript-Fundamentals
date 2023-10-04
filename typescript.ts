@@ -230,3 +230,46 @@ const updatedDemoArray2 = insertAtBeginning2(demoArray2, -1);
 
 updatedDemoArray2[0].split('');
 // TypeScript will now warn that split is being called on a number
+
+
+// Classes and Interfaces
+
+class Student {
+   name: string;
+   age: number;
+   private courses: string[];
+   gradYear: number;
+   // In TypeScript the properties for the class can be defined in advance unlike in JavaScript   
+
+   constructor(name: string, age: number, courses: string[], gradYear: number) {
+      this.name = name;
+      this.age = age;
+      this.courses = courses;
+      this.gradYear = gradYear;
+   }
+
+   // In TypeScript properties can be defined and assigned at once
+  /* 
+   constructor(
+      public name: string;
+      public age: number;
+      private courses: string[];
+      public gradYear: number
+   ) {}
+  */ 
+   // This is short hand for defining the properties and types, and assigning values to those properties
+
+   // the method of the class
+   enroll(courseName: string) {
+      this.courses.push(courseName);
+   }
+   // When creating a method in TypeScript it differs from creating a method in JavaScript by omitting the functtion keyword before the method name. 
+
+   // In TypeScript, uniike in JavaScript, properties and methods can be specified as public or private
+   // Public properties and methods can be accessed from outside of the class
+   // Private classes and methods can only be accessed from inside of the of the class
+};
+
+const student1 = new Student('Taylor', 33, ['Guitar', 'Songwriting', 'Piano'], 2006);
+
+student1.enroll('Singing');

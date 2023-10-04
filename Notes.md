@@ -256,9 +256,7 @@ class Student {
    age: number;
    private courses: string[];
    gradYear: number;
-   In TypeScript the properties for the class can be set in advance unlike in JavaScript
-   In JavaScript properties would be added by setting them in the constructor.
-   
+   In TypeScript the properties for the class can be defined in advance unlike in JavaScript   
 
    constructor(name: string, age: number, courses: string[], gradYear: number) {
       this.name = name;
@@ -266,6 +264,15 @@ class Student {
       this.courses = courses;
       this.gradYear = gradYear;
    }
+
+   In TypeScript properties can be defined and assigned at once
+   constructor(
+      public name: string;
+      public age: number;
+      private courses: string[];
+      public gradYear: number
+   ) {}
+   This is short hand for defining the properties and types, and assigning values to those properties
 
    the method of the class
    enroll(courseName: string) {
