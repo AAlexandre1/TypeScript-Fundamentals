@@ -224,7 +224,7 @@ TypeScript allows this because it does not know that the value is a number since
 
 
 
-Generic Function
+# Generic Function
 
 function insertAtBeginning<T>(array: T[], value: T) {
    const newArray = [value, ...array];
@@ -288,3 +288,58 @@ class Student {
 const student1 = new Student('Taylor', 33, ['Guitar', 'Songwriting', 'Piano'], 2006);
 
 student.enroll('Singing');
+
+
+# Interfaces
+
+Interfaces are object type definitions
+Interfaces are exclusive to TypeScript and will nto compile into JavaScript
+
+interface Human {
+   name: string;
+   age: number;
+   occupation?: string
+   adding a question mark after the key makes this key conditional, it allows it to be present or not
+
+   greet () => void;
+   do not add the method definition, just the type of the method
+   this greet method has no parameters
+}
+
+let max: Human;
+
+singer = {
+   name: 'Taylor',
+   age: 33,
+   
+   greet() {
+      console.log('Hello');
+   },
+ };
+ This object fulfills the requirements set by the interface
+
+ interfaces can be used to define object types
+
+ interfaces are similar to Types
+ Unlike types, interfaces can be implemented by classes.
+ They force classes to have the structure defined by interfaces
+
+ type Human = {
+   name: string;
+   age: number;
+
+   greet () => void;
+   do not add the method definition, just the type of the method
+   this greet method has no parameters
+}
+
+by using the implements Human keyword we implement the interface Human 
+This class must correctly implement the interface
+class Instructor implements Human {
+   name: string;
+   age: number;
+
+   greet() {
+      console.log('Hello. How are you?');
+   }
+}
