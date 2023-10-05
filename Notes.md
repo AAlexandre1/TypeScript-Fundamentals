@@ -306,7 +306,7 @@ student.enroll('Singing');
 # Interfaces
 
 Interfaces are object type definitions
-Interfaces are exclusive to TypeScript and will nto compile into JavaScript
+Interfaces are exclusive to TypeScript and will not compile into JavaScript
 
 interface Human {
    name: string;
