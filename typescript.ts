@@ -290,24 +290,24 @@ student1.enroll('Singing');
 // Interfaces are object type definitions
 // Interfaces are exclusive to TypeScript and will nto compile into JavaScript
 
-interface Person {
+interface Person2 {
    name: string;
    age: number;
    occupation?: string
    // adding a question mark after the key makes this key conditional, it allows it to be present or not
 
-   greet () => void;
+   greet: () => void;
    // do not add the method definition, just the type of the method
    // this greet method has no parameters
 }
 
-let artist: Person;
+let artist: Person2;
 
 artist = {
    name: 'Taylor',
    age: 33,
-   
-   greet () {
+
+   greet() {
       console.log('Hello');
    },
  };
