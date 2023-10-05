@@ -84,6 +84,19 @@ this would not return an error because all of the values in the array are boolea
 isTasty = ["true", false, false, true, true, true]
 would return an error because "true is type string not type boolean
 
+
+// Tuples
+let employee: [string, number, boolean];
+// a tuple can contain multiple data types
+
+employee = ['Samantha', 47518, true];
+// This follows the types specified.
+
+employee = [96328, 'Jake', false]
+// The variables that do not follow the types specified creates an error
+
+
+
 # Objects
 
 let course: {
@@ -306,7 +319,7 @@ interface Human {
    this greet method has no parameters
 }
 
-let max: Human;
+let singer: Human;
 
 singer = {
    name: 'Taylor',

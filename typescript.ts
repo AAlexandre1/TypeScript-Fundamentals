@@ -67,6 +67,16 @@ isTasty = [true, false, false, false, true, false]
 isTasty = ["true", false, false, true, true, true]
 // would return an error because "true is type string not type boolean
 
+// Tuples
+let employee: [string, number, boolean];
+// a tuple can contain multiple data types
+
+employee = ['Samantha', 47518, true];
+// This follows the types specified.
+
+employee = [96328, 'Jake', false]
+// The variables that do not follow the types specified creates an error
+
 
 let course: {
    name: string;
@@ -273,3 +283,58 @@ class Student {
 const student1 = new Student('Taylor', 33, ['Guitar', 'Songwriting', 'Piano'], 2006);
 
 student1.enroll('Singing');
+
+
+// Interfaces
+
+// Interfaces are object type definitions
+// Interfaces are exclusive to TypeScript and will nto compile into JavaScript
+
+interface Person {
+   name: string;
+   age: number;
+   occupation?: string
+   // adding a question mark after the key makes this key conditional, it allows it to be present or not
+
+   greet () => void;
+   // do not add the method definition, just the type of the method
+   // this greet method has no parameters
+}
+
+let artist: Person;
+
+artist = {
+   name: 'Taylor',
+   age: 33,
+   
+   greet () {
+      console.log('Hello');
+   },
+ };
+//  This object fulfills the requirements set by the interface
+
+//  interfaces can be used to define object types
+
+//  interfaces are similar to Types
+//  Unlike types, interfaces can be implemented by classes.
+//  They force classes to have the structure defined by interfaces
+
+ type Human = {
+   name: string;
+   age: number;
+
+   greet () => void;
+   // do not add the method definition, just the type of the method
+   // this greet method has no parameters
+}
+
+// by using the implements Human keyword we implement the interface Human 
+// This class must correctly implement the interface
+class Instructor implements Human {
+   name: string;
+   age: number;
+
+   greet() {
+      console.log('Hello. How are you?');
+   }
+}
